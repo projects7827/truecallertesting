@@ -4,7 +4,7 @@ const App = () => {
   var req_nonce = 123456789598;  // random number of length 8 to 64 characters
 
   function truecaller() {
-    alert("successful");
+    alert("pt");
     window.location.href = `truecallersdk://truesdk/web_verify?type=btmsheet&requestNonce=${req_nonce}&partnerKey=IFspJbde6cb8b59a74d28953031a1f34ff29d&partnerName=ockypocky&lang=en&loginPrefix=getdetails&loginSuffix=signin&ctaPrefix=proceedwith&ctaColor=white&ctaTextColor=red&btnShape=round&skipOption=useanothernum`
 
     // fetch("https://ockypocky-test.azurewebsites.net/result").then((res) => res.json()).then((value) => {
