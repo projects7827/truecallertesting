@@ -24,7 +24,7 @@ const App = () => {
         // callback URL - post which, you can refresh the session at your frontend and complete the user  verification
       }
     }, 600);
-    window.location.href = `truecallersdk://truesdk/web_verify?type=btmsheet&requestNonce=${req_nonce}&partnerKey=IFspJbde6cb8b59a74d28953031a1f34ff29d&partnerName=ockypocky&lang=en&loginPrefix=getdetails&loginSuffix=signin&ctaPrefix=proceedwith&ctaColor=white&ctaTextColor=red&btnShape=round&skipOption=useanothernum`
+    window.location.href = `truecallersdk://truesdk/web_verify?type=btmsheet&requestNonce=${req_nonce}&partnerKey=QY8jy517b3efdf98d44798e129f973d028a69&partnerName=testing&lang=en`
   }
   return (
     <>
