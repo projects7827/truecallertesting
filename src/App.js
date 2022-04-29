@@ -4,7 +4,7 @@ const App = () => {
   var req_nonce = 123456789598;  // random number of length 8 to 64 characters
   function truecaller() {
 
-    window.location = `truecallersdk://truesdk/web_verify?
+    window.location = `https://truecallersdk://truesdk/web_verify?
         requestNonce=${req_nonce}
         &partnerKey="QY8jy517b3efdf98d44798e129f973d028a69"
         &partnerName="testing"
