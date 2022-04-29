@@ -3,7 +3,7 @@ import React from 'react'
 const App = () => {
   var req_nonce = 123456789598;  // random number of length 8 to 64 characters
   function truecaller() {
-    setTimeout(function () {
+    setTimeout(function (value = "") {
       if (document.hasFocus()) {
         // window.location.href = "/NotFound";
       } else {
@@ -24,11 +24,18 @@ const App = () => {
         // callback URL - post which, you can refresh the session at your frontend and complete the user  verification
       }
     }, 600);
-    window.location.href = `truecallersdk://truesdk/web_verify?type=btmsheet&requestNonce=${req_nonce}&partnerKey=QY8jy517b3efdf98d44798e129f973d028a69&partnerName=testing&lang=en&loginPrefix=getdetails&loginSuffix=signin&ctaPrefix=proceedwith&ctaColor=white&ctaTextColor=red&btnShape=round&skipOption=useanothernum`
+    if (value === 2) {
+      window.location.href = `https://truecallersdk://truesdk/web_verify?type=btmsheet&requestNonce=${req_nonce}&partnerKey=QY8jy517b3efdf98d44798e129f973d028a69&partnerName=testing&lang=en&loginPrefix=getdetails&loginSuffix=signin&ctaPrefix=proceedwith&ctaColor=white&ctaTextColor=red&btnShape=round&skipOption=useanothernum`
+    }
+    else {
+      window.location = `truecallersdk://truesdk/web_verify?type=btmsheet&requestNonce=${req_nonce}&partnerKey=QY8jy517b3efdf98d44798e129f973d028a69&partnerName=testing&lang=en&loginPrefix=getdetails&loginSuffix=signin&ctaPrefix=proceedwith&ctaColor=white&ctaTextColor=red&btnShape=round&skipOption=useanothernum`
+    }
   }
   return (
     <>
       <button onClick={truecaller}>truecaller</button>
+      <button onClick={() => truecaller(2)}>truecaller2</button>
+
     </>
   )
 }
