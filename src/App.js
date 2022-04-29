@@ -5,8 +5,8 @@ const App = () => {
 
   function truecaller() {
     alert("pt");
-var url=`truecallersdk://truesdk/web_verify?requestNonce=${req_nonce}&partnerKey=QY8jy517b3efdf98d44798e129f973d028a69&partnerName=testing&lang=LANGUAGE_LOCALE&title=TITLE_STRING_OPTION&skipOption=FOOTER_CTA_STRING`
-
+    var url = `truecallersdk://truesdk/web_verify?requestNonce=${req_nonce}&partnerKey=QY8jy517b3efdf98d44798e129f973d028a69&partnerName=testing&lang=LANGUAGE_LOCALE&title=TITLE_STRING_OPTION&skipOption=FOOTER_CTA_STRING`
+    window.location.href = url;
   }
 
   return (
