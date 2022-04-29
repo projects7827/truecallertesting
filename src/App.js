@@ -2,8 +2,8 @@ import React from 'react'
 
 const App = () => {
   var req_nonce = 123456789598;  // random number of length 8 to 64 characters
-  function truecaller() {
-    setTimeout(function (value = "") {
+  function truecaller(value = "") {
+    setTimeout(function () {
       if (document.hasFocus()) {
         // window.location.href = "/NotFound";
       } else {
