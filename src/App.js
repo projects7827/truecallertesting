@@ -5,7 +5,7 @@ const App = () => {
   function truecaller() {
     setTimeout(function () {
       if (document.hasFocus()) {
-        window.location.href = "/NotFound";
+        // window.location.href = "/NotFound";
       } else {
         alert("successful");
         fetch("https://ockypocky-test.azurewebsites.net/result").then((res) => res.json()).then((value) => {
