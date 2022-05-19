@@ -17,7 +17,7 @@ const App = () => {
           };
           fetch(options).then((res) => { res.json() }).then((res) => {
             alert(JSON.stringify(res));
-          })
+          }).catch((err) => { JSON.stringify(err) })
 
         })
       }
