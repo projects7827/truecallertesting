@@ -6,8 +6,8 @@ const App = () => {
 
     window.location.href = `truecallersdk://truesdk/web_verify?
         requestNonce=${req_nonce}
-        &partnerKey="IFspJbde6cb8b59a74d28953031a1f34ff29d"
-        &partnerName="ockypocky"
+        &partnerKey="P0smK41384c5915474009aeaadc01110e27af"
+        &partnerName="truecaller"
         &lang=en`;
 
     setTimeout(function () {
