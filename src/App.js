@@ -3,34 +3,31 @@ import React from 'react'
 const App = () => {
   var req_nonce = 123456789598;  // random number of length 8 to 64 characters
   function truecaller() {
-
-    window.location.href = `truecallersdk://truesdk/web_verify?
-        requestNonce=${req_nonce}
-        &partnerKey="P0smK41384c5915474009aeaadc01110e27af"
-        &partnerName="truecaller"
-        &lang=en`;
-
     setTimeout(function () {
-
       if (document.hasFocus()) {
-        alert("success")
-        // Truecaller app not present on the device and you redirect the user 
-        // to your alternate verification page
+        window.location.href = "/NotFound";
       } else {
-        alert("fail")
+        alert("successful");
+        fetch("https://pt-truecaller.herokuapp.com/reply").then((res) => res.json()).then((value) => {
+          JSON.stringify(value);
+          const options = {
+            method: "GET",
+            url: "https://profile4.truecaller.com/v1/default",
+            headers: { Authorization: `Bearer ${value.accessToken}` },
+          };
+          fetch(options).then((res) => { res.json() }).then((res) => {
+            JSON.stringify(res);
+          })
 
-        // Truecaller app present on the device and the profile overlay opens
-        // The user clicks on verify & you'll receive the user's access token to fetch the profile on your 
-        // callback URL - post which, you can refresh the session at your frontend and complete the user  verification
+        })
       }
     }, 600);
-
-
+    window.location.href = `truecallersdk://truesdk/web_verify?requestNonce=${req_nonce}&partnerKey="P0smK41384c5915474009aeaadc01110e27af"&partnerName="truecaller"&lang=en`;
   }
+
   return (
     <>
       <button onClick={truecaller}>truecaller</button>
-
     </>
   )
 }
