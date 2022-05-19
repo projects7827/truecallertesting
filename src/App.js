@@ -8,18 +8,18 @@ const App = () => {
         alert("not found")
       } else {
         alert("successful");
-        // fetch("https://pt-truecaller.herokuapp.com/reply").then((res) => res.json()).then((value) => {
-        //   JSON.stringify(value);
-        //   const options = {
-        //     method: "GET",
-        //     url: "https://profile4.truecaller.com/v1/default",
-        //     headers: { Authorization: `Bearer ${value.accessToken}` },
-        //   };
-        //   fetch(options).then((res) => { res.json() }).then((res) => {
-        //     JSON.stringify(res);
-        //   })
+        fetch("https://pt-truecaller.herokuapp.com/reply").then((res) => res.json()).then((value) => {
+          JSON.stringify(value);
+          const options = {
+            method: "GET",
+            url: "https://profile4.truecaller.com/v1/default",
+            headers: { Authorization: `Bearer ${value.accessToken}` },
+          };
+          fetch(options).then((res) => { res.json() }).then((res) => {
+            alert(JSON.stringify(res));
+          })
 
-        // })
+        })
       }
     }, 600);
     window.location.href = `truecallersdk://truesdk/web_verify?requestNonce=${req_nonce}&partnerKey="P0smK41384c5915474009aeaadc01110e27af"&partnerName="truecaller"&lang=en`;
