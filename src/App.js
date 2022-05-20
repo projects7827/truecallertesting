@@ -8,7 +8,7 @@ const App = () => {
         alert("not found")
       } else {
         alert("successful");
-        fetch("https://pt-truecaller.herokuapp.com/").then((res) => {
+        fetch("https://pt-truecaller.herokuapp.com/reply").then((res) => {
         console.log(res);  
         return res.json()}).then((value) => {
           alert(JSON.stringify(value));
