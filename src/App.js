@@ -8,8 +8,9 @@ const App = () => {
         alert("not found")
       } else {
         alert("successful");
-        fetch("https://pt-truecaller.herokuapp.com/reply").then((res) => res.json()).then((value) => {
+        fetch("https://pt-truecaller.herokuapp.com/").then((res) => res.json()).then((value) => {
           JSON.stringify(value);
+          alert("done")
           const options = {
             method: "GET",
             url: "https://profile4.truecaller.com/v1/default",
