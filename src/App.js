@@ -27,7 +27,7 @@ const App = () => {
         // })
       }
     }, 2000);
-    let deeplink = `truecallersdk://truesdk/web_verify?requestNonce='12345678000'&partnerKey='ktAmh7b26e72d999c4f42b5a18e12454dee83'&partnerName='ockypocky2'`
+    let deeplink = `truecallersdk://truesdk/web_verify?requestNonce=12345678000&partnerKey=ktAmh7b26e72d999c4f42b5a18e12454dee83&partnerName=ockypocky2`
     // alert(deeplink);
 
     window.location.href = deeplink;
