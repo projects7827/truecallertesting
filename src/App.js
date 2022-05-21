@@ -7,16 +7,19 @@ const App = () => {
   }, [])
 
 
-  
+
   function settingFocus() {
-  setTimeout(() => {
-    if (document.hasFocus()) {
-      alert("done")
-    }
-    else {
-      settingFocus();
-    }
-  }, 500);
+    setTimeout(() => {
+      if (document.hasFocus()) {
+        fetch(`https://ockypockydev.azurewebsites.net/api/v1/user/truecaller_auth/get_token/?req_id=${Math.floor(result)}`).then((res) => res.json()).then((data) => {
+          alert(JSON.stringify(data));
+        })
+      }
+      else {
+        settingFocus();
+
+      }
+    }, 500);
   }
 
   function truecaller() {
@@ -36,11 +39,7 @@ const App = () => {
         // You can add your logic here    
       }
       else {
-
-
         settingFocus();
-
-
         // document.onmousedown = () => {
         //   alert("done")
         //   if (document.hasFocus()) {
@@ -59,12 +58,7 @@ const App = () => {
 
 
 
-        //           fetch(`https://ockypockydev.azurewebsites.net/api/v1/user/truecaller_auth/get_token/?req_id=${Math.floor(result)}`).then(async (res) => {
-        //             let response = await res.json();
 
-        // count++;
-
-        //           })
 
 
       }
