@@ -9,7 +9,7 @@ const App = () => {
     let result = Math.random() * (max - min) + min;
     setTimeout(function () {
       fetch(`https://ockypockydev.azurewebsites.net/api/v1/user/truecaller_auth/get_token/?req_id=${Math.floor(result)}`).then((res) => res.json()).then((data) => {
-        console.log(data)
+        document.write(JSON.stringify(data));
       })
       alert(result)
     }, 1000);
