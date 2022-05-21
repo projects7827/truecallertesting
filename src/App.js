@@ -17,8 +17,10 @@ const App = () => {
         // You can add your logic here    
       }
       else {
+        alert("entered");
 
         document.onmousedown = () => {
+          alert("done")
           if (document.hasFocus()) {
 
             alert(true);
