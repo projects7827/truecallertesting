@@ -29,9 +29,9 @@ const App = () => {
         // })
       }
     }, 2000);
-    let deeplink = `truecallersdk://truesdk/web_verify?requestNonce=${Math.floor(result)}&partnerKey="P0smK41384c5915474009aeaadc01110e27af"&partnerName="truecaller"&lang=en`
-    alert(deeplink);
-    alert(Math.floor(result));
+    let deeplink = `truecallersdk://truesdk/web_verify?requestNonce=123456789598&partnerKey="P0smK41384c5915474009aeaadc01110e27af"&partnerName="truecaller"&lang=en`
+    // alert(deeplink);
+     alert(Math.floor(result));
 
     window.location.href = deeplink;
 
