@@ -25,7 +25,7 @@ const App = () => {
       }
       else {
 
-        document.addEventListener("focus", function (cb) {
+        window.addEventListener("focus", function (cb) {
 
 
           alert("done")
