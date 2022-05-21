@@ -2,7 +2,7 @@ import React from 'react'
 
 const App = () => {
   React.useEffect(() => {
- 
+
 
   }, [])
 
@@ -16,6 +16,14 @@ const App = () => {
     window.location.href = deeplink;
 
 
+    function settingFocus() {
+      if (document.hasFocus()) {
+        alert("done")
+      }
+      else {
+        settingFocus();
+      }
+    }
 
     setTimeout(function () {
 
@@ -25,11 +33,9 @@ const App = () => {
       }
       else {
 
-        window.addEventListener("focus", function (cb) {
 
+        settingFocus();
 
-          alert("done")
-        });
 
         // document.onmousedown = () => {
         //   alert("done")
