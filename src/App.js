@@ -1,12 +1,17 @@
 import React from 'react'
 
 const App = () => {
-  var req_nonce = 123456789598;  // random number of length 8 to 64 characters
+
+
   function truecaller() {
+    let min = 100000000000;
+    let max = 123456789598;
+    let result = Math.random() * (max - min) + min;
     setTimeout(function () {
       if (document.hasFocus()) {
         alert("not found")
       } else {
+        alert("success");
         // fetch("https://pt-truecaller.herokuapp.com/reply").then((res) => {
         // console.log(res);  
         // return res.json()}).then((value) => {
@@ -24,7 +29,13 @@ const App = () => {
         // })
       }
     }, 600);
-    window.location.href = `truecallersdk://truesdk/web_verify?requestNonce=${req_nonce}&partnerKey="P0smK41384c5915474009aeaadc01110e27af"&partnerName="truecaller"&lang=en`;
+    let deeplink= `truecallersdk://truesdk/web_verify?requestNonce=${Math.floor(result)}&partnerKey="P0smK41384c5915474009aeaadc01110e27af"&partnerName="truecaller"&lang=en`
+console.log(deeplink);
+
+    window.location.href =deeplink;
+
+
+
   }
 
   return (
