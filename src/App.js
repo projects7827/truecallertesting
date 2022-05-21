@@ -9,13 +9,14 @@ const App = () => {
 
   
   function settingFocus() {
+  setTimeout(() => {
     if (document.hasFocus()) {
       alert("done")
     }
     else {
-      alert("not done")
       settingFocus();
     }
+  }, 1000);
   }
 
   function truecaller() {
