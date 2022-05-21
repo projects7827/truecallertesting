@@ -30,7 +30,6 @@ const App = () => {
     let deeplink = `truecallersdk://truesdk/web_verify?requestNonce=${Math.floor(result)}&partnerKey=ktAmh7b26e72d999c4f42b5a18e12454dee83&partnerName=ockypocky2`
     window.location.href = deeplink;
 
-
     setTimeout(function () {
 
       if (document.hasFocus()) {
