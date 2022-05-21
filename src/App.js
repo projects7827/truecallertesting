@@ -54,12 +54,6 @@ const App = () => {
         // callback URL - post which, you can refresh the session at your frontend and complete the user  verification
         // let count = 1;
         // let interval = setInterval(() => {
-
-
-
-
-
-
       }
     }, 3000);
   }
