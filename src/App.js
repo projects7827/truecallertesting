@@ -28,11 +28,12 @@ const App = () => {
 
         // })
       }
-    }, 600);
-    let deeplink= `truecallersdk://truesdk/web_verify?requestNonce=${Math.floor(result)}&partnerKey="P0smK41384c5915474009aeaadc01110e27af"&partnerName="truecaller"&lang=en`
-console.log(deeplink);
+    }, 2000);
+    let deeplink = `truecallersdk://truesdk/web_verify?requestNonce=${Math.floor(result)}&partnerKey="P0smK41384c5915474009aeaadc01110e27af"&partnerName="truecaller"&lang=en`
+    alert(deeplink);
+    alert(Math.floor(result));
 
-    window.location.href =deeplink;
+    window.location.href = deeplink;
 
 
 
