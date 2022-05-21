@@ -27,14 +27,10 @@ const App = () => {
         // })
       }
     }, 2000);
-    let deeplink = `truecallersdk://truesdk/web_verify?
-    requestNonce=123456789598
-    &partnerKey='odiOUeb01214f7b7e44d5a5c6fa473f150649'
-    &partnerName='ockypockynew'
-    &lang=en;`
+    let deeplink = `truecallersdk://truesdk/web_verify?requestNonce=123456789598&partnerKey="odiOUeb01214f7b7e44d5a5c6fa473f150649"&partnerName="ockypockynew"&lang=en`
     // alert(deeplink);
 
-    window.location = deeplink;
+    window.location.href = deeplink;
 
 
 
