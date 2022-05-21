@@ -7,6 +7,17 @@ const App = () => {
   }, [])
 
 
+  
+  function settingFocus() {
+    if (document.hasFocus()) {
+      alert("done")
+    }
+    else {
+      alert("not done")
+      settingFocus();
+    }
+  }
+
   function truecaller() {
 
     let min = 100000000000;
@@ -16,18 +27,10 @@ const App = () => {
     window.location.href = deeplink;
 
 
-    function settingFocus() {
-      if (document.hasFocus()) {
-        alert("done")
-      }
-      else {
-        settingFocus();
-      }
-    }
-
     setTimeout(function () {
 
       if (document.hasFocus()) {
+        alert("has focus")
         // To Check whether Truecaller App is present on device or not
         // You can add your logic here    
       }
