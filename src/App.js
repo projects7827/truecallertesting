@@ -9,9 +9,7 @@ const App = () => {
     let result = Math.random() * (max - min) + min;
     setTimeout(function () {
       if (document.hasFocus()) {
-        alert("not found")
       } else {
-        alert("success");
         // fetch("https://pt-truecaller.herokuapp.com/reply").then((res) => {
         // console.log(res);  
         // return res.json()}).then((value) => {
@@ -31,7 +29,6 @@ const App = () => {
     }, 2000);
     let deeplink = `truecallersdk://truesdk/web_verify?requestNonce=123456789598&partnerKey="P0smK41384c5915474009aeaadc01110e27af"&partnerName="truecaller"&lang=en`
     // alert(deeplink);
-     alert(Math.floor(result));
 
     window.location.href = deeplink;
 
