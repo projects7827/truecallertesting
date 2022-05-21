@@ -32,6 +32,7 @@ const App = () => {
   function settingFocus(result) {
     setTimeout((result) => {
       if (document.hasFocus()) {
+        alert(Math.floor(result));
         alert("done")
         fetch(`https://ockypockydev.azurewebsites.net/api/v1/user/truecaller_auth/get_token/?req_id=${Math.floor(result)}`).then((res) => res.json()).then((data) => {
           alert(JSON.stringify(data));
