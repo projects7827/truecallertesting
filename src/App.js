@@ -12,10 +12,10 @@ const App = () => {
   function truecaller() {
     let min = 100000000000;
     let max = 123456789598;
-    let result = Math.random() * (max - min) + min;
+    var result = Math.random() * (max - min) + min;
     let deeplink = `truecallersdk://truesdk/web_verify?requestNonce=${Math.floor(result)}&partnerKey=ktAmh7b26e72d999c4f42b5a18e12454dee83&partnerName=ockypocky2`
     window.location.href = deeplink;
-    setTimeout((result) => {
+    setTimeout(() => {
 
       if (document.hasFocus()) {
         alert("has focus")
@@ -23,14 +23,14 @@ const App = () => {
         // You can add your logic here    
       }
       else {
-        settingFocus(result);
+        settingFocus();
       }
 
     }, 500);
   }
 
-  function settingFocus(result) {
-    setTimeout((result) => {
+  function settingFocus() {
+    setTimeout(() => {
       if (document.hasFocus()) {
         alert(Math.floor(result));
         alert("done")
