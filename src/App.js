@@ -15,6 +15,8 @@ const App = () => {
     let result = Math.random() * (max - min) + min;
     let deeplink = `truecallersdk://truesdk/web_verify?requestNonce=${Math.floor(result)}&partnerKey=ktAmh7b26e72d999c4f42b5a18e12454dee83&partnerName=ockypocky2`
     window.location.href = deeplink;
+    setTimeout((result) => {
+
       if (document.hasFocus()) {
         alert("has focus")
         // To Check whether Truecaller App is present on device or not
@@ -23,11 +25,14 @@ const App = () => {
       else {
         settingFocus(result);
       }
+
+    }, 500);
   }
 
-  function settingFocus() {
+  function settingFocus(result) {
     setTimeout((result) => {
       if (document.hasFocus()) {
+        alert("done")
         fetch(`https://ockypockydev.azurewebsites.net/api/v1/user/truecaller_auth/get_token/?req_id=${Math.floor(result)}`).then((res) => res.json()).then((data) => {
           alert(JSON.stringify(data));
         })
