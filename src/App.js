@@ -19,9 +19,12 @@ const App = () => {
       else {
 
         document.onmousedown = () => {
-          if (document.hasFocus() === false) {
+          if (document.hasFocus()) {
 
-            alert("get access token")
+            alert(true);
+          }
+          else{
+            alert(false);
           }
         }
         // Truecaller app present on the device and the profile overlay opens
