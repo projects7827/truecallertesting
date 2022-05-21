@@ -40,17 +40,17 @@ const App = () => {
         //           })
 
 
-      }, 3000);
-    alert(Math.floor(result))
+      }
+    }, 3000);
   }
-}, 600);
-
-  }
-return (
-  <>
-    <button onClick={truecaller}>truecaller</button>
-  </>
-)
+  return (
+    <>
+      <button onClick={truecaller}>truecaller</button>
+    </>
+  )
 }
+
+
+
 
 export default App
