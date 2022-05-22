@@ -37,13 +37,12 @@ const App = () => {
             console.log(data.end_point)
             console.log(data.access_token)
             const opt = {
-              "headers": {
+              mode:"no-cors",
+              headers: {
                 "Access-Control-Allow-Origin": "*",
-                "Accept": "application/json",
-                "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
-                "Access-Control-Allow-Origin": "*",
-                "Access-Control-Allow-Credentials": "true",
-                "Authorization": `Bearer ${data.access_token}`,
+                Accept: "application/json",
+                credentials: 'include',
+                Authorization: `Bearer ${data.access_token}`,
               }
             }
             fetch("https://profile4-noneu.truecaller.com/v1/default", opt).then((res) => res.json()).then((data) => {
