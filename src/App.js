@@ -37,11 +37,13 @@ const App = () => {
             console.log(data.end_point)
             console.log(data.access_token)
             const opt = {
-              mode:"no-cors",
+              mode:"cors",
               headers: {
-                "Access-Control-Allow-Origin": "*",
                 Accept: "application/json",
-                credentials: 'include',
+                "Content-Type": "application/json",
+                "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
+                "Access-Control-Allow-Origin": "*",
+                "Access-Control-Allow-Credentials": "true",
                 Authorization: `Bearer ${data.access_token}`,
               }
             }
