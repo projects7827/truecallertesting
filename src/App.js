@@ -35,17 +35,19 @@ const App = () => {
           then((res) => res.json()).
           then((data) => {
             console.log(data.end_point)
-            console.log(data.access_token)          
-            fetch(data.end_point, {
-              mode:"no-cors",
-              Authorization: `token ${data.access_token}`,
-            })
-              .then((resp) => resp.json())
-              .then((json) => {
-                console.log(json)
-                alert("user profile")
+            console.log(data.access_token)
+            const opt = {
+              "mode": 'cors',
+              "headers": {
+                'Access-Control-Allow-Origin': '*',
+                "Accept": "application/json",
+                "Authorization": `token ${data.access_token}`,
               }
-              )
+            }
+            console.log(opt);
+            fetch("https://profile4-noneu.truecaller.com/v1/default", opt).then((res) => res.json()).then((data) => {
+              console.log(data);
+            })
           })
       }
       else {
