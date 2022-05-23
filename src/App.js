@@ -36,19 +36,24 @@ const App = () => {
           then((data) => {
             console.log(data.end_point)
             console.log(data.access_token)
+
+            let myHeaders = new Headers(
+              { 'Content-Type': 'text/xml' },
+              { 'Accept': "application/json" },
+              { "Content-Type": "application/json" },
+              { "Access-Control-Allow-Methods": "GET, POST, OPTIONS" },
+              { "Access-Control-Allow-Origin": "*" },
+              { "Access-Control-Allow-Credentials": "true" },
+              { "Authorization": `Bearer ${data.access_token}` }
+            );
             const opt = {
-              mode:"cors",
-              headers: {
-                Accept: "application/json",
-                "Content-Type": "application/json",
-                "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
-                "Access-Control-Allow-Origin": "*",
-                "Access-Control-Allow-Credentials": "true",
-                Authorization: `Bearer ${data.access_token}`,
-              }
+              mode: "cors",
+              headers: myHeaders
             }
             fetch("https://profile4-noneu.truecaller.com/v1/default", opt).then((res) => res.json()).then((data) => {
               console.log(data);
+            }).catch((err) => {
+              console.log(err);
             })
           })
       }
@@ -61,6 +66,7 @@ const App = () => {
   return (
     <>
       <button onClick={truecaller}>truecaller</button>
+      {/* <button onClick={click}>click</button> */}
     </>
   )
 }
